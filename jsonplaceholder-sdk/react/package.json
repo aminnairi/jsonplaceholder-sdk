@@ -1,0 +1,22 @@
+{
+  "name": "@jsonplaceholder-sdk/react",
+  "version": "0.1.0",
+  "description": "React SDK for jsonplaceholder",
+  "main": "dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "vite build",
+    "types": "tsc --declaration --emitDeclarationOnly --project tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.37",
+    "@vitejs/plugin-react": "3.1.0",
+    "typescript": "5.0.4",
+    "vite": "4.2.2",
+    "zod": "3.21.4"
+  },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "zod": "3.21.4"
+  }
+}

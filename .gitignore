@@ -1,0 +1,8 @@
+node_modules
+dist
+.npm
+.local
+.cache
+.node_repl_history
+.editorconfig
+.vscode

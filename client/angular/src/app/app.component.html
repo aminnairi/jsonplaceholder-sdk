@@ -1,0 +1,29 @@
+<h1>Users</h1>
+
+<ng-container *ngIf="jsonPlaceholderUsersService.loading | async; else error">
+  <p>Loading...</p>
+  <button (click)="jsonPlaceholderUsersService.abortFetchUsers()">Abort</button>
+</ng-container>
+
+<ng-template #error>
+  <ng-container *ngIf="jsonPlaceholderUsersService.error | async as error; else users">
+    <p>Error: {{ error?.message ?? "Unknown error" }}</p>
+    <button (click)="jsonPlaceholderUsersService.fetchUsers()">Retry</button>
+  </ng-container>
+</ng-template>
+
+<ng-template #users>
+  <button (click)="jsonPlaceholderUsersService.fetchUsers()">Refresh</button>
+
+  <table>
+    <tbody>
+      <tr *ngFor="let user of jsonPlaceholderUsersService.users | async">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.website }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
